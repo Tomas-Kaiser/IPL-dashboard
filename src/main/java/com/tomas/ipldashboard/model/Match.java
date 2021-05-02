@@ -1,12 +1,16 @@
 package com.tomas.ipldashboard.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Entity
 public class Match {
+    @Id
     private Long id;
     private String city;
     private LocalDate date;
-    private String playerOfmatch;
+    private String playerOfMatch;
     private String venue;
     private String team1;
     private String team2;
@@ -42,12 +46,12 @@ public class Match {
         this.date = date;
     }
 
-    public String getPlayerOfmatch() {
-        return playerOfmatch;
+    public String getPlayerOfMatch() {
+        return playerOfMatch;
     }
 
-    public void setPlayerOfmatch(String playerOfmatch) {
-        this.playerOfmatch = playerOfmatch;
+    public void setPlayerOfMatch(String playerOfMatch) {
+        this.playerOfMatch = playerOfMatch;
     }
 
     public String getVenue() {

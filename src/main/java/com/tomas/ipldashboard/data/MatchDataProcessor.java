@@ -20,7 +20,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
         match.setId(Long.parseLong(matchInput.getId()));
         match.setCity(matchInput.getCity());
         match.setDate(LocalDate.parse(matchInput.getDate()));
-        match.setPlayerOfmatch(matchInput.getPlayer_of_match());
+        match.setPlayerOfMatch(matchInput.getPlayer_of_match());
 
         // Set team 1 & team 2 depending on the innings order
         String firstInningsTeam, secondInningsTeam;
@@ -42,7 +42,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
         match.setResultMargin(matchInput.getResult_margin());
         match.setUmpire1(matchInput.getUmpire1());
         match.setUmpire2(matchInput.getUmpire2());
-        
+
         return match;
     }
 }
