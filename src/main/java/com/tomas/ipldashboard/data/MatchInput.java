@@ -3,7 +3,6 @@ package com.tomas.ipldashboard.data;
 import javax.persistence.Entity;
 
 // MatchInput follows the csv
-@Entity
 public class MatchInput {
     private String id;
     private String city;
