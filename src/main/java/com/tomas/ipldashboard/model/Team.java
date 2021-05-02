@@ -1,9 +1,7 @@
 package com.tomas.ipldashboard.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Team {
@@ -14,9 +12,24 @@ public class Team {
     private long totalMatches;
     private long totalWins;
 
+    // To ignore this filed for DATA JPA we use @Transient => It is not gonna be found in table
+    @Transient
+    List<Match> matches;
+
+    public Team() {
+    }
+
     public Team(String teamName, long totalMatches) {
         this.teamName = teamName;
         this.totalMatches = totalMatches;
+    }
+
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 
     public long getId() {
